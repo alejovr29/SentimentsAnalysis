@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sentiment Analysis</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        .result { margin-top: 20px; font-weight: bold; }
+        textarea { width: 100%; min-height: 80px; margin-bottom: 10px; }
+        button { padding: 10px 15px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>Sentiment Analyser</h1>
+    <p>Enter your text to analyse:</p>
+
+    <form method="POST" action="/">
+        <textarea name="texto_usuario" placeholder="Type here...">{{ texto or '' }}</textarea>
+        <br>
+        <button type="submit">Analyse</button>
+    </form>
+
+    {% if prediccion %}
+    <div class="result">
+        Result: {{ prediccion }}
+    </div>
+    {% endif %}
+
+</body>
+</html>
